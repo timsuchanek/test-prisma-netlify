@@ -103,17 +103,17 @@
   resolved "https://registry.yarnpkg.com/@opentelemetry/context-base/-/context-base-0.14.0.tgz#c67fc20a4d891447ca1a855d7d70fa79a3533001"
   integrity sha512-sDOAZcYwynHFTbLo6n8kIbLiVF3a3BLkrmehJUyEbT9F+Smbi47kLGS2gG2g0fjBLR/Lr1InPD7kXL7FaTqEkw==
 
-"@prisma/client@2.19.0":
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.19.0.tgz#a45f17a59fd109e95b61bf4b56d4a7642169ec0e"
-  integrity sha512-QK4M8TjJh1QesyO9aLM7DeAQUi5+UnNHpEAm5kwqBO1cq/4Ag5yU9ladctJFJleEE5BLewXHwV2t9A+VfCZslg==
+"@prisma/client@2.20.0-integration-update-esbuild.1":
+  version "2.20.0-integration-update-esbuild.1"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.20.0-integration-update-esbuild.1.tgz#7e43388c5ea03a2d72db8d4b4b753a42bdb2cc2c"
+  integrity sha512-WbxniTmv0XiDF+Z/sZycFsATDusyvcf+wfQl3/7B/VYF5KEjK7PO3eyV8XiLaVw+qCqfMkFBnuw7Vb1dZRFAuw==
   dependencies:
-    "@prisma/engines-version" "2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d"
+    "@prisma/engines-version" "2.20.0-17.7c0577afe6a4bdc4cb153e4e22dc136442300aa1"
 
-"@prisma/engines-version@2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d":
-  version "2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d"
-  resolved "https://registry.yarnpkg.com/@prisma/engines-version/-/engines-version-2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d.tgz#a7f80d481ec6cb8e2975ab530664d4ca5fc9eba6"
-  integrity sha512-NzhbwC4iMbRQwJxdhNQX6eaVcOuNGtHRk6aesWE4KMf/YmlW5kfi3HDy7WZ/C4P0Iyn9oURDuk+xZV6QDUVjTw==
+"@prisma/engines-version@2.20.0-17.7c0577afe6a4bdc4cb153e4e22dc136442300aa1":
+  version "2.20.0-17.7c0577afe6a4bdc4cb153e4e22dc136442300aa1"
+  resolved "https://registry.yarnpkg.com/@prisma/engines-version/-/engines-version-2.20.0-17.7c0577afe6a4bdc4cb153e4e22dc136442300aa1.tgz#53218e6b003a7dd247f9d267ca3a1cb606e88223"
+  integrity sha512-23gmITa0Z4LmLKQMMkLAQox9P9YGT3WEzEX78qrQtdXniAPAsH4unRu23Wd4kQ3TXv4ifnrWLeSEeZiV1rrLew==
 
 "@prisma/engines@2.18.0-34.da6fafb57b24e0b61ca20960c64e2d41f9e8cff1":
   version "2.18.0-34.da6fafb57b24e0b61ca20960c64e2d41f9e8cff1"

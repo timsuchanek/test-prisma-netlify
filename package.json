@@ -8,7 +8,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "@prisma/client": "2.19.0",
+    "@prisma/client": "2.20.0-integration-update-esbuild.1",
     "next": "latest",
     "prisma": "^2.18.0",
     "react": "^17.0.1",
