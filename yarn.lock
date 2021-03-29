@@ -103,10 +103,10 @@
   resolved "https://registry.yarnpkg.com/@opentelemetry/context-base/-/context-base-0.14.0.tgz#c67fc20a4d891447ca1a855d7d70fa79a3533001"
   integrity sha512-sDOAZcYwynHFTbLo6n8kIbLiVF3a3BLkrmehJUyEbT9F+Smbi47kLGS2gG2g0fjBLR/Lr1InPD7kXL7FaTqEkw==
 
-"@prisma/client@2.20.0-integration-update-esbuild.1":
-  version "2.20.0-integration-update-esbuild.1"
-  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.20.0-integration-update-esbuild.1.tgz#7e43388c5ea03a2d72db8d4b4b753a42bdb2cc2c"
-  integrity sha512-WbxniTmv0XiDF+Z/sZycFsATDusyvcf+wfQl3/7B/VYF5KEjK7PO3eyV8XiLaVw+qCqfMkFBnuw7Vb1dZRFAuw==
+"@prisma/client@^2.20.0-integration-napi-round-3.13":
+  version "2.20.0-integration-napi-round-3.13"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.20.0-integration-napi-round-3.13.tgz#7e44c627f69463007ad4b3694604f5915f4bd872"
+  integrity sha512-dfj0yDH4CGmDc+hUQZXp4N5QyMPGooRiVNfp5biFe68DhmyQN8WNOX1cpJu4pu5sjBCKP1YBIJZGfkjh328dew==
   dependencies:
     "@prisma/engines-version" "2.20.0-17.7c0577afe6a4bdc4cb153e4e22dc136442300aa1"
 
