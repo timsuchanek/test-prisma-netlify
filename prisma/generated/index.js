@@ -138,7 +138,14 @@ const envPaths = {
   rootEnvPath: config.relativeEnvPaths.rootEnvPath && path.resolve(dirname, config.relativeEnvPaths.rootEnvPath),
   schemaEnvPath: config.relativeEnvPaths.schemaEnvPath && path.resolve(dirname, config.relativeEnvPaths.schemaEnvPath)
 }
+try {
+
 warnEnvConflicts(envPaths)
+} catch (e) {
+  throw new Error(`${e.stack}
+${typeof warnEnvConflicts}
+${JSON.stringify(warnEnvConflicts, null, 2)}`)
+}
 
 const PrismaClient = getPrismaClient(config)
 exports.PrismaClient = PrismaClient
