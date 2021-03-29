@@ -3062,7 +3062,7 @@ var require_decimal = __commonJS2((exports2, module2) => {
       minE: -EXP_LIMIT,
       maxE: EXP_LIMIT,
       crypto: false
-    }, Decimal4, inexact, noConflict, quadrant, external = true, decimalError = "[DecimalError] ", invalidArgument = decimalError + "Invalid argument: ", precisionLimitExceeded = decimalError + "Precision limit exceeded", cryptoUnavailable = decimalError + "crypto unavailable", mathfloor = Math.floor, mathpow = Math.pow, isBinary = /^0b([01]+(\.[01]*)?|\.[01]+)(p[+-]?\d+)?$/i, isHex = /^0x([0-9a-f]+(\.[0-9a-f]*)?|\.[0-9a-f]+)(p[+-]?\d+)?$/i, isOctal = /^0o([0-7]+(\.[0-7]*)?|\.[0-7]+)(p[+-]?\d+)?$/i, isDecimal = /^(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?$/i, BASE = 1e7, LOG_BASE = 7, MAX_SAFE_INTEGER = 9007199254740991, LN10_PRECISION = LN10.length - 1, PI_PRECISION = PI.length - 1, P = {name: "[object Decimal]"};
+    }, Decimal3, inexact, noConflict, quadrant, external = true, decimalError = "[DecimalError] ", invalidArgument = decimalError + "Invalid argument: ", precisionLimitExceeded = decimalError + "Precision limit exceeded", cryptoUnavailable = decimalError + "crypto unavailable", mathfloor = Math.floor, mathpow = Math.pow, isBinary = /^0b([01]+(\.[01]*)?|\.[01]+)(p[+-]?\d+)?$/i, isHex = /^0x([0-9a-f]+(\.[0-9a-f]*)?|\.[0-9a-f]+)(p[+-]?\d+)?$/i, isOctal = /^0o([0-7]+(\.[0-7]*)?|\.[0-7]+)(p[+-]?\d+)?$/i, isDecimal = /^(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?$/i, BASE = 1e7, LOG_BASE = 7, MAX_SAFE_INTEGER = 9007199254740991, LN10_PRECISION = LN10.length - 1, PI_PRECISION = PI.length - 1, P = {name: "[object Decimal]"};
     P.absoluteValue = P.abs = function() {
       var x = new this.constructor(this);
       if (x.s < 0)
@@ -4697,7 +4697,7 @@ var require_decimal = __commonJS2((exports2, module2) => {
       if (isFloat)
         x = divide(x, divisor, len * 4);
       if (p)
-        x = x.times(Math.abs(p) < 54 ? mathpow(2, p) : Decimal4.pow(2, p));
+        x = x.times(Math.abs(p) < 54 ? mathpow(2, p) : Decimal3.pow(2, p));
       external = true;
       return x;
     }
@@ -4997,18 +4997,18 @@ var require_decimal = __commonJS2((exports2, module2) => {
     }
     function clone(obj) {
       var i, p, ps;
-      function Decimal5(v) {
+      function Decimal4(v) {
         var e, i2, t, x = this;
-        if (!(x instanceof Decimal5))
-          return new Decimal5(v);
-        x.constructor = Decimal5;
-        if (v instanceof Decimal5) {
+        if (!(x instanceof Decimal4))
+          return new Decimal4(v);
+        x.constructor = Decimal4;
+        if (v instanceof Decimal4) {
           x.s = v.s;
           if (external) {
-            if (!v.d || v.e > Decimal5.maxE) {
+            if (!v.d || v.e > Decimal4.maxE) {
               x.e = NaN;
               x.d = null;
-            } else if (v.e < Decimal5.minE) {
+            } else if (v.e < Decimal4.minE) {
               x.e = 0;
               x.d = [0];
             } else {
@@ -5039,10 +5039,10 @@ var require_decimal = __commonJS2((exports2, module2) => {
             for (e = 0, i2 = v; i2 >= 10; i2 /= 10)
               e++;
             if (external) {
-              if (e > Decimal5.maxE) {
+              if (e > Decimal4.maxE) {
                 x.e = NaN;
                 x.d = null;
-              } else if (e < Decimal5.minE) {
+              } else if (e < Decimal4.minE) {
                 x.e = 0;
                 x.d = [0];
               } else {
@@ -5075,56 +5075,56 @@ var require_decimal = __commonJS2((exports2, module2) => {
         }
         return isDecimal.test(v) ? parseDecimal(x, v) : parseOther(x, v);
       }
-      Decimal5.prototype = P;
-      Decimal5.ROUND_UP = 0;
-      Decimal5.ROUND_DOWN = 1;
-      Decimal5.ROUND_CEIL = 2;
-      Decimal5.ROUND_FLOOR = 3;
-      Decimal5.ROUND_HALF_UP = 4;
-      Decimal5.ROUND_HALF_DOWN = 5;
-      Decimal5.ROUND_HALF_EVEN = 6;
-      Decimal5.ROUND_HALF_CEIL = 7;
-      Decimal5.ROUND_HALF_FLOOR = 8;
-      Decimal5.EUCLID = 9;
-      Decimal5.config = Decimal5.set = config;
-      Decimal5.clone = clone;
-      Decimal5.isDecimal = isDecimalInstance;
-      Decimal5.abs = abs;
-      Decimal5.acos = acos;
-      Decimal5.acosh = acosh;
-      Decimal5.add = add;
-      Decimal5.asin = asin;
-      Decimal5.asinh = asinh;
-      Decimal5.atan = atan;
-      Decimal5.atanh = atanh;
-      Decimal5.atan2 = atan2;
-      Decimal5.cbrt = cbrt;
-      Decimal5.ceil = ceil;
-      Decimal5.cos = cos;
-      Decimal5.cosh = cosh;
-      Decimal5.div = div;
-      Decimal5.exp = exp;
-      Decimal5.floor = floor;
-      Decimal5.hypot = hypot;
-      Decimal5.ln = ln;
-      Decimal5.log = log2;
-      Decimal5.log10 = log10;
-      Decimal5.log2 = log22;
-      Decimal5.max = max;
-      Decimal5.min = min;
-      Decimal5.mod = mod;
-      Decimal5.mul = mul;
-      Decimal5.pow = pow;
-      Decimal5.random = random;
-      Decimal5.round = round;
-      Decimal5.sign = sign;
-      Decimal5.sin = sin;
-      Decimal5.sinh = sinh;
-      Decimal5.sqrt = sqrt;
-      Decimal5.sub = sub;
-      Decimal5.tan = tan;
-      Decimal5.tanh = tanh;
-      Decimal5.trunc = trunc;
+      Decimal4.prototype = P;
+      Decimal4.ROUND_UP = 0;
+      Decimal4.ROUND_DOWN = 1;
+      Decimal4.ROUND_CEIL = 2;
+      Decimal4.ROUND_FLOOR = 3;
+      Decimal4.ROUND_HALF_UP = 4;
+      Decimal4.ROUND_HALF_DOWN = 5;
+      Decimal4.ROUND_HALF_EVEN = 6;
+      Decimal4.ROUND_HALF_CEIL = 7;
+      Decimal4.ROUND_HALF_FLOOR = 8;
+      Decimal4.EUCLID = 9;
+      Decimal4.config = Decimal4.set = config;
+      Decimal4.clone = clone;
+      Decimal4.isDecimal = isDecimalInstance;
+      Decimal4.abs = abs;
+      Decimal4.acos = acos;
+      Decimal4.acosh = acosh;
+      Decimal4.add = add;
+      Decimal4.asin = asin;
+      Decimal4.asinh = asinh;
+      Decimal4.atan = atan;
+      Decimal4.atanh = atanh;
+      Decimal4.atan2 = atan2;
+      Decimal4.cbrt = cbrt;
+      Decimal4.ceil = ceil;
+      Decimal4.cos = cos;
+      Decimal4.cosh = cosh;
+      Decimal4.div = div;
+      Decimal4.exp = exp;
+      Decimal4.floor = floor;
+      Decimal4.hypot = hypot;
+      Decimal4.ln = ln;
+      Decimal4.log = log2;
+      Decimal4.log10 = log10;
+      Decimal4.log2 = log22;
+      Decimal4.max = max;
+      Decimal4.min = min;
+      Decimal4.mod = mod;
+      Decimal4.mul = mul;
+      Decimal4.pow = pow;
+      Decimal4.random = random;
+      Decimal4.round = round;
+      Decimal4.sign = sign;
+      Decimal4.sin = sin;
+      Decimal4.sinh = sinh;
+      Decimal4.sqrt = sqrt;
+      Decimal4.sub = sub;
+      Decimal4.tan = tan;
+      Decimal4.tanh = tanh;
+      Decimal4.trunc = trunc;
       if (obj === void 0)
         obj = {};
       if (obj) {
@@ -5135,8 +5135,8 @@ var require_decimal = __commonJS2((exports2, module2) => {
               obj[p] = this[p];
         }
       }
-      Decimal5.config(obj);
-      return Decimal5;
+      Decimal4.config(obj);
+      return Decimal4;
     }
     function div(x, y) {
       return new this(x).div(y);
@@ -5166,7 +5166,7 @@ var require_decimal = __commonJS2((exports2, module2) => {
       return t.sqrt();
     }
     function isDecimalInstance(obj) {
-      return obj instanceof Decimal4 || obj && obj.name === "[object Decimal]" || false;
+      return obj instanceof Decimal3 || obj && obj.name === "[object Decimal]" || false;
     }
     function ln(x) {
       return new this(x).ln();
@@ -5282,30 +5282,30 @@ var require_decimal = __commonJS2((exports2, module2) => {
     function trunc(x) {
       return finalise(x = new this(x), x.e + 1, 1);
     }
-    Decimal4 = clone(DEFAULTS);
-    Decimal4["default"] = Decimal4.Decimal = Decimal4;
-    LN10 = new Decimal4(LN10);
-    PI = new Decimal4(PI);
+    Decimal3 = clone(DEFAULTS);
+    Decimal3["default"] = Decimal3.Decimal = Decimal3;
+    LN10 = new Decimal3(LN10);
+    PI = new Decimal3(PI);
     if (typeof define == "function" && define.amd) {
       define(function() {
-        return Decimal4;
+        return Decimal3;
       });
     } else if (typeof module2 != "undefined" && module2.exports) {
       if (typeof Symbol == "function" && typeof Symbol.iterator == "symbol") {
         P[Symbol.for("nodejs.util.inspect.custom")] = P.toString;
         P[Symbol.toStringTag] = "Decimal";
       }
-      module2.exports = Decimal4;
+      module2.exports = Decimal3;
     } else {
       if (!globalScope) {
         globalScope = typeof self != "undefined" && self && self.self == self ? self : window;
       }
       noConflict = globalScope.Decimal;
-      Decimal4.noConflict = function() {
+      Decimal3.noConflict = function() {
         globalScope.Decimal = noConflict;
-        return Decimal4;
+        return Decimal3;
       };
-      globalScope.Decimal = Decimal4;
+      globalScope.Decimal = Decimal3;
     }
   })(exports2);
 });
@@ -29146,6 +29146,7 @@ Please look into the logs or turn on the env var DEBUG=* to debug the constantly
       this.flags = flags !== null && flags !== void 0 ? flags : [];
       this.enableExperimental = enableExperimental !== null && enableExperimental !== void 0 ? enableExperimental : [];
       this.activeProvider = activeProvider;
+      initHooks();
       const removedFlags = [
         "middlewares",
         "aggregateApi",
@@ -29832,12 +29833,20 @@ You very likely have the wrong "binaryTarget" defined in the schema.prisma file.
       }
     });
   }
-  hookProcess("beforeExit");
-  hookProcess("exit");
-  hookProcess("SIGINT", true);
-  hookProcess("SIGUSR1", true);
-  hookProcess("SIGUSR2", true);
-  hookProcess("SIGTERM", true);
+  var hooksInitialized = false;
+  function initHooks() {
+    if (!hooksInitialized) {
+      if (!process.env.PRISMA_FORCE_NAPI) {
+        hookProcess("beforeExit");
+        hookProcess("exit");
+        hookProcess("SIGINT", true);
+        hookProcess("SIGUSR1", true);
+        hookProcess("SIGUSR2", true);
+        hookProcess("SIGTERM", true);
+      }
+      hooksInitialized = false;
+    }
+  }
 });
 
 // ../engine-core/dist/NAPIEngine.js
@@ -29863,16 +29872,23 @@ var require_NAPIEngine = __commonJS2((exports, module) => {
   function isQueryEvent(event) {
     return event.level === "info" && event["item_type"] === "query";
   }
+  function isPanicEvent(event) {
+    return event.level === "error" && event["message"] === "PANIC";
+  }
   var knownPlatforms = [...get_platform_1.platforms, "native"];
   var NAPIEngine = class {
     constructor(config) {
       var _a, _b;
+      console.log("hello mello");
+      console.log(config.cwd, config.dirname);
       this.datamodel = fs_1.default.readFileSync(config.datamodelPath, "utf-8");
       this.config = config;
       this.connected = false;
       this.logQueries = (_a = config.logQueries) !== null && _a !== void 0 ? _a : false;
       this.logLevel = (_b = config.logLevel) !== null && _b !== void 0 ? _b : "error";
       this.logEmitter = new events_1.default();
+      this.logEmitter.on("error", (e) => {
+      });
       this.datasourceOverrides = config.datasources ? this.convertDatasources(config.datasources) : {};
       if (this.logQueries) {
         process.env.LOG_QUERIES = "true";
@@ -29939,27 +29955,18 @@ You may have to run ${chalk_1.default.greenBright("prisma generate")} for your c
             this.engine = new this.QueryEngine({
               datamodel: this.datamodel,
               datasourceOverrides: this.datasourceOverrides,
-              logLevel: this.logLevel
-            }, (err, log2) => {
-              var _a;
-              if (err)
-                throw new Error(err);
-              const event = this.parseEngineResponse(log2);
-              if (!event)
-                return;
-              event.level = (_a = event === null || event === void 0 ? void 0 : event.level.toLowerCase()) !== null && _a !== void 0 ? _a : "unknown";
-              if (isQueryEvent(event)) {
-                this.logEmitter.emit("query", {
-                  timestamp: Date.now(),
-                  query: event.query,
-                  params: event.params,
-                  duration: event.duration_ms,
-                  target: event.module_path
-                });
-              } else {
-                this.logEmitter.emit(event.level, event);
-              }
-            });
+              logLevel: this.logLevel,
+              featureFlagsOverrides: process.env.PRISMA_DEBUG_ENABLE_ALL_FLAGS ? [
+                "microsoftSqlServer",
+                "groupBy",
+                "createMany",
+                "orderByRelation",
+                "napi",
+                "mongoDb",
+                "selectRelationCount"
+              ] : void 0,
+              configDir: this.config.cwd
+            }, (err, log2) => this.logger(err, log2));
           } catch (e) {
             const error = this.parseInitError(e.message);
             if (typeof error === "string") {
@@ -29970,6 +29977,41 @@ You may have to run ${chalk_1.default.greenBright("prisma generate")} for your c
           }
         }
       }
+    }
+    logger(err, log2) {
+      var _a;
+      if (err) {
+        throw err;
+      }
+      const event = this.parseEngineResponse(log2);
+      if (!event)
+        return;
+      event.level = (_a = event === null || event === void 0 ? void 0 : event.level.toLowerCase()) !== null && _a !== void 0 ? _a : "unknown";
+      if (isQueryEvent(event)) {
+        this.logEmitter.emit("query", {
+          timestamp: Date.now(),
+          query: event.query,
+          params: event.params,
+          duration: event.duration_ms,
+          target: event.module_path
+        });
+      } else if (isPanicEvent(event)) {
+        this.lastError = new errors_1.PrismaClientRustPanicError(this.getErrorMessageWithLink(`${event.message}: ${event.reason} in ${event.file}:${event.line}:${event.column}`), this.config.clientVersion);
+        this.logEmitter.emit("error", this.lastError);
+      } else {
+        this.logEmitter.emit(event.level, event);
+      }
+    }
+    getErrorMessageWithLink(title) {
+      var _a, _b;
+      return errors_1.getErrorMessageWithLink({
+        platform: this.platform,
+        title,
+        version: this.config.clientVersion,
+        engineVersion: (_a = this.serverInfo) === null || _a === void 0 ? void 0 : _a.version,
+        database: (_b = this.serverInfo) === null || _b === void 0 ? void 0 : _b.primaryConnector,
+        query: this.lastQuery
+      });
     }
     parseInitError(str) {
       try {
@@ -30022,6 +30064,7 @@ You may have to run ${chalk_1.default.greenBright("prisma generate")} for your c
           debug("starting");
           await ((_a = this.engine) === null || _a === void 0 ? void 0 : _a.connect({enableRawQueries: true}));
           debug("started");
+          void this.version();
           res();
         });
         return this.connectPromise;
@@ -30068,14 +30111,15 @@ You may have to run ${chalk_1.default.greenBright("prisma generate")} for your c
     async version(forceRun) {
       await this.start();
       const serverInfo = this.parseEngineResponse(await this.engine.serverInfo());
-      return serverInfo.version;
+      this.serverInfo = serverInfo;
+      return this.serverInfo.version;
     }
     graphQLToJSError(error) {
       debug("graphQLToJSError");
       if (error.user_facing_error.error_code) {
         return new errors_1.PrismaClientKnownRequestError(error.user_facing_error.message, error.user_facing_error.error_code, this.config.clientVersion, error.user_facing_error.meta);
       }
-      return new errors_1.PrismaClientUnknownRequestError(error.user_facing_error.message, this.config.clientVersion);
+      return new errors_1.PrismaClientUnknownRequestError(error.error, this.config.clientVersion);
     }
     async request(query, headers, numTry) {
       try {
@@ -30084,10 +30128,15 @@ You may have to run ${chalk_1.default.greenBright("prisma generate")} for your c
         if (!this.connected) {
           await this.start();
         }
-        this.currentQuery = this.engine.query({query, variables: {}});
+        const request = {query, variables: {}};
+        this.lastQuery = JSON.stringify(request);
+        this.currentQuery = this.engine.query(request, {});
         const data = this.parseEngineResponse(await this.currentQuery);
         if (data.errors) {
           if (data.errors.length === 1) {
+            if (this.lastError) {
+              throw this.lastError;
+            }
             throw this.graphQLToJSError(data.errors[0]);
           }
           throw new errors_1.PrismaClientUnknownRequestError(JSON.stringify(data.errors), this.config.clientVersion);
@@ -30107,11 +30156,12 @@ ${error.backtrace}`, this.config.clientVersion);
       await this.start();
       debug("requestBatch");
       const variables = {};
-      const body = {
+      const request = {
         batch: queries.map((query) => ({query, variables})),
         transaction
       };
-      this.currentQuery = this.engine.query(body);
+      this.lastQuery = JSON.stringify(request);
+      this.currentQuery = this.engine.query(request, {});
       const result = await this.currentQuery;
       const data = this.parseEngineResponse(result);
       if (data.errors) {
@@ -30124,8 +30174,9 @@ ${error.backtrace}`, this.config.clientVersion);
         const {batchResult, errors} = data;
         if (Array.isArray(batchResult)) {
           return batchResult.map((result2) => {
+            var _a;
             if (result2.errors) {
-              return this.graphQLToJSError(result2.errors[0]);
+              return (_a = this.lastError) !== null && _a !== void 0 ? _a : this.graphQLToJSError(result2.errors[0]);
             }
             return {
               data: result2,
@@ -30684,7 +30735,7 @@ var require_dist12 = __commonJS2((exports2) => {
 var require_package2 = __commonJS2((exports2, module2) => {
   module2.exports = {
     name: "@prisma/client",
-    version: "2.20.0-integration-update-esbuild.4",
+    version: "2.20.0-integration-update-esbuild2.1",
     description: "Prisma Client is an auto-generated, type-safe and modern JavaScript/TypeScript ORM for Node.js that's tailored to your data. Supports MySQL, PostgreSQL, MariaDB, SQLite databases.",
     keywords: [
       "orm",
@@ -30741,13 +30792,13 @@ var require_package2 = __commonJS2((exports2, module2) => {
       "index-browser.js"
     ],
     devDependencies: {
-      "@prisma/debug": "2.20.0-integration-update-esbuild.4",
-      "@prisma/engine-core": "2.20.0-integration-update-esbuild.4",
+      "@prisma/debug": "0.0.0",
+      "@prisma/engine-core": "0.0.0",
       "@prisma/engines": "2.20.0-17.7c0577afe6a4bdc4cb153e4e22dc136442300aa1",
-      "@prisma/generator-helper": "2.20.0-integration-update-esbuild.4",
-      "@prisma/get-platform": "2.20.0-integration-update-esbuild.4",
+      "@prisma/generator-helper": "0.0.0",
+      "@prisma/get-platform": "0.0.0",
       "@prisma/migrate": "0.0.0",
-      "@prisma/sdk": "2.20.0-integration-update-esbuild.4",
+      "@prisma/sdk": "0.0.0",
       "@timsuchanek/copy": "1.4.5",
       "@types/debug": "4.1.5",
       "@types/jest": "26.0.22",

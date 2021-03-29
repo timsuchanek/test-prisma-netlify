@@ -24,11 +24,11 @@ const Prisma = {}
 exports.Prisma = Prisma
 
 /**
- * Prisma Client JS version: 2.20.0-integration-update-esbuild.4
+ * Prisma Client JS version: 2.20.0-integration-update-esbuild2.1
  * Query Engine version: da6fafb57b24e0b61ca20960c64e2d41f9e8cff1
  */
 Prisma.prismaVersion = {
-  client: "2.20.0-integration-update-esbuild.4",
+  client: "2.20.0-integration-update-esbuild2.1",
   engine: "da6fafb57b24e0b61ca20960c64e2d41f9e8cff1"
 }
 
@@ -120,7 +120,7 @@ const config = {
   },
   "sqliteDatasourceOverrides": [],
   "relativePath": "..",
-  "clientVersion": "2.20.0-integration-update-esbuild.4",
+  "clientVersion": "2.20.0-integration-update-esbuild2.1",
   "engineVersion": "da6fafb57b24e0b61ca20960c64e2d41f9e8cff1",
   "datasourceNames": [
     "db"
@@ -138,14 +138,7 @@ const envPaths = {
   rootEnvPath: config.relativeEnvPaths.rootEnvPath && path.resolve(dirname, config.relativeEnvPaths.rootEnvPath),
   schemaEnvPath: config.relativeEnvPaths.schemaEnvPath && path.resolve(dirname, config.relativeEnvPaths.schemaEnvPath)
 }
-try {
-
 warnEnvConflicts(envPaths)
-} catch (e) {
-  throw new Error(`${e.stack}
-${typeof warnEnvConflicts}
-${JSON.stringify(warnEnvConflicts, null, 2)}`)
-}
 
 const PrismaClient = getPrismaClient(config)
 exports.PrismaClient = PrismaClient
