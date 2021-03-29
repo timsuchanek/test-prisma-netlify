@@ -188,7 +188,7 @@ export namespace Prisma {
 
   /**
    * Prisma Client JS version: 2.20.0-integration-update-esbuild2.1
-   * Query Engine version: da6fafb57b24e0b61ca20960c64e2d41f9e8cff1
+   * Query Engine version: c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d
    */
   export type PrismaVersion = {
     client: string
