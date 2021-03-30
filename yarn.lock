@@ -115,10 +115,10 @@
   resolved "https://registry.yarnpkg.com/@prisma/engines-version/-/engines-version-2.20.0-25.1083b6e4dda228c8ef7542ede1bde33dd50eb5db.tgz#eb7e3c927cbf935737b81aaba00e10da473c9db8"
   integrity sha512-X5Pf/AHlLT1pFT0Mvf0j/sEcZ3oC+DtePZtExywYS6QRN0tumEloPk5pYddQ4Erd9KJTUfe1BMcnrxDh6fvntQ==
 
-"@prisma/engines@2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d":
-  version "2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d"
-  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d.tgz#db2809a6f7f18584e3ca89b1f5bad884155629ec"
-  integrity sha512-rEWpaG7wZvPuWJC5SwkBB/Iwue//oC5yv58Mse7r+ibtgkA7vGdWc1bFDQ32DT9tDL5WSC6bBwqEASGV/1Gm1Q==
+"@prisma/engines@2.20.0-25.1083b6e4dda228c8ef7542ede1bde33dd50eb5db":
+  version "2.20.0-25.1083b6e4dda228c8ef7542ede1bde33dd50eb5db"
+  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-2.20.0-25.1083b6e4dda228c8ef7542ede1bde33dd50eb5db.tgz#691a695cfb865db2c2d9315847a653a664cb8542"
+  integrity sha512-otfCJLE8WCCMOq4pNev2sO4Ltxe6UsOHuHHMFWE5n2OS+haDzQMVQlNXcJ3SVicIXvmEDJttQ3Hhdqxwecopow==
 
 "@types/node@^12.12.21":
   version "12.20.5"
@@ -1137,12 +1137,12 @@ postcss@^7.0.32:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-prisma@^2.19.0:
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.19.0.tgz#2c14f9cbbfb0ab69c8a9473e16736759713d29ad"
-  integrity sha512-iartCNVrtR4XT20ABN3zrSi3R/pCBe75Y0ZH8681QIGm8qjRQzf3DnbscPZgZ9iY4KFuVxL8ZrBQVDmRhpN0EQ==
+prisma@^2.20.0-integration-update-esbuild.6:
+  version "2.20.0-integration-update-esbuild.6"
+  resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.20.0-integration-update-esbuild.6.tgz#f82a7d153fa2d9362a2a344d3b69d0ab1ffcedcc"
+  integrity sha512-jDD1MrfXjYn16c8rbedXlPm5CgSOInORix+YqiVxJZS/B862M5XKBjzyL+DvlmxLU6iD+pCtZiIdu2MkpkVkJg==
   dependencies:
-    "@prisma/engines" "2.19.0-39.c1455d0b443d66b0d9db9bcb1bb9ee0d5bbc511d"
+    "@prisma/engines" "2.20.0-25.1083b6e4dda228c8ef7542ede1bde33dd50eb5db"
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
