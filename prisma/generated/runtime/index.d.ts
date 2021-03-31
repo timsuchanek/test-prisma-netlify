@@ -188,9 +188,9 @@ declare type Dictionary$1<T> = {
 };
 interface GeneratorConfig {
     name: string;
-    output: string | null;
+    output: EnvValue | null;
     isCustomOutput?: boolean;
-    provider: string;
+    provider: EnvValue;
     config: Dictionary$1<string>;
     binaryTargets: string[];
     previewFeatures: string[];

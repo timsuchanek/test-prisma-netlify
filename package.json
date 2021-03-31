@@ -8,6 +8,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@netlify/zip-it-and-ship-it": "^3.0.1",
     "@prisma/client": "2.20.0-integration-update-esbuild.6",
     "globby": "^11.0.3",
     "next": "latest",
