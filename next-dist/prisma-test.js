@@ -1,1 +1,0 @@
-module.exports = require('./src/.next/server/pages/api/prisma-test.js')
