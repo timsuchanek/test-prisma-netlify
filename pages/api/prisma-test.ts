@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { PrismaClient } from '../../prisma/generated'
+import { PrismaClient } from '@prisma/client'
 import globby from 'globby'
 import path from 'path'
 
